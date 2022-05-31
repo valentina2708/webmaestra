@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:body>
+
+        <ui:composition template="./template/plantilla.xhtml">
+
+            <ui:define name="content">
+  
+                <h1 style="color:  #036fab">Draggable agrega la capacidad de arrastrar y soltar a un componente.</h1>
+                <div class="card">
+                    <style type="text/css">
+                        .ui-panel {
+                            margin: 15px;
+                            width: 300px;
+                        }
+                    </style>
+
+
+
+                    <p:panel id="pnl" header="Panel Arrastable">
+                        <h:outputText value="Un panel p:normal"/>
+                    </p:panel>
+                    <p:draggable for="pnl"/>
+
+                    <p:panel id="handlepnl" header="Resolver">
+                        <h:outputText value="Solo se puede arrastrar con mi encabezado"/>
+                    </p:panel>
+                    <p:draggable for="handlepnl" handle=".ui-panel-titlebar"/>
+
+                    <p:panel id="hpnl" header="Solo Horizontales">
+                        <h:outputText value="Solo se puede arrastrar Horizontalmente"/>
+                    </p:panel>
+                    <p:draggable for="hpnl" axis="x"/>
+
+                    <p:panel id="vpnl" header="Solo Verticales">
+                        <h:outputText value="Solo se puede arrastrar Verticalmente"/>
+                    </p:panel>
+                    <p:draggable for="vpnl" axis="y"/>
+
+                    <p:panel id="rpnl" header="Revertir">
+                        <h:outputText value="Volver a mi posicion original"/>
+                    </p:panel>
+                    <p:draggable for="rpnl" revert="true"/>
+
+                    <p:panel id="opnl" header="Opacidad">
+                        <h:outputText value="La opacidad es menor cuando me arrastran"/>
+                    </p:panel>
+                    <p:draggable for="opnl" opacity="0.3"/>
+
+                    <p:panel id="gpnl" header="Cuadricula">
+                        <h:outputText value="Arrastrado en modo Cudricula"/>
+                    </p:panel>
+                    <p:draggable for="gpnl" grid="20,40"/>
+
+                    <p:outputPanel id="restrictPanel" layout="block"
+                                   style="width:400px;height:200px;border:1px solid var(--surface-d);margin-bottom:20px">
+                        <p:panel id="conpnl" header="Restringido">
+                            <h:outputText value="Restricted por limites"/>
+                        </p:panel>
+                    </p:outputPanel>
+                    <p:draggable for="conpnl" containment="parent"/>
+
+                    <p:graphicImage id="pic" name="imagenes/imagen1.jpg"/>
+                    <p:draggable for="pic"/>
+                </div>     
+            </ui:define>
+
+        </ui:composition>
+
+
+    </h:body>
+</html>

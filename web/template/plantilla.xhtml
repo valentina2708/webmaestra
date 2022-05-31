@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/tableLayout.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+              <h:graphicImage value="imagenes/primfaces.jpg" width="100%" height="350" />
+    <h:body>
+      
+        <table cellspacing="9px" width="100%">
+            <tr>
+                <td id="top">
+                    <h:form>
+                        <p:menubar>
+                            <p:menuitem value="Inicio" outcome="index"/>
+                            <p:menuitem value="Efectos" outcome="Efectos"/>
+                            <p:menuitem value="Tabview" outcome="Tabview"/>
+                             <p:menuitem value="Log" outcome="Log"/>
+                            <p:menuitem value="DragDrop" outcome="DragDrop"/>
+                            <p:menuitem value="Mapa" outcome="Mapa"/>
+                            <p:menuitem value="SelectorColor" outcome="SelectorColor"/>
+                            <p:menuitem value="Teclado" outcome="Teclado"/>
+                            <p:menuitem value="BloqueUI" outcome="BloqueUI"/>
+                            <p:menuitem value="MonitorInactivo" outcome="MonitorInactivo"/>
+                             <p:menuitem value="ValidacionCliente" outcome="ValidacionCliente"/>
+                        </p:menubar>
+                    </h:form>
+                </td>
+            </tr>
+            <tr>
+                <td id="content">
+                    <ui:insert name="content">Content</ui:insert>
+                </td>
+            </tr>
+        </table>
+    </h:body>
+
+</html>
